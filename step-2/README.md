@@ -44,6 +44,13 @@ On the next line create an array of the numbers 1 through 8, with a duplicate se
 ```js
 let arr = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8]; // create an array of the image numbers, 1-8, twice
 ```
+> tip: you _could_ do this in ES6 by concatenating two Arrays like thus (or make it more DRY by building the arrays in a loop): 
+> ```
+> let arr1 = Array.from({length: 8}, (_, i) => i + 1);
+> let arr2 = Array.from({length: 8}, (_, i) => i + 1);
+> let finalArr = [...arr1,...arr2]
+> ```
+
 Now we'll "shuffle" this array using the JS Array method `.sort()`:
 ```js
 arr.sort(() => Math.random() > 0.5 ? 1 : -1); // randomly sort the array
